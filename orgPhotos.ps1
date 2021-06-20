@@ -1,4 +1,25 @@
-$param1=$args[0]
-write-host $param1 
-$param2=$args[0]
-write-host $param2
+#functions
+function DefaultFolderValue {
+    param([string]$inputSrt)
+
+    if ([string]::IsNullOrEmpty($inputSrt)) {
+        return '.\'
+    }
+    elseif ( !($inputSrt[-1] -eq '\')) {
+        return $inputSrt + '\' 
+    }else{
+        $inputSrt
+    }
+}
+
+
+#Input Params
+$srcFolder = $args[0]
+$targetFolder = $args[1]
+
+$srcFolder = DefaultFolderValue -inputSrt $srcFolder
+$targetFolder = DefaultFolderValue -inputSrt $targetFolder
+
+write-host $srcFolder 
+write-host $targetFolder
+
