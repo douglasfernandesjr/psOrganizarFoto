@@ -2,6 +2,10 @@
 
 Script feito em powershell para organizar fotos baseados em metadados de data de criação.
 
+Move os arquivos para pastas baseada na data da foto, as pastas serão criadas neste formato "YYYY\MM\DD".
+
+Útil para organizar pastas com várias fotos que estão esquecidas no PC.
+
 Modo de uso
 
 ```
@@ -30,7 +34,7 @@ Modo de uso
 
 ### debugMode
 - Opcional
-- se o valor 1 for informado irá somente listas os arquivos, e não executar a ação
+- Se o valor 1 for informado, somente vai listar os arquivos e não executar a ação.
 
 ```
 .\orgPhotos.ps1 -debugMode 1
