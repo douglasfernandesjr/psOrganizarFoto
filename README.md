@@ -5,7 +5,7 @@ Script feito em powershell para organizar fotos baseados em metadados de data de
 Modo de uso
 
 ```
-.\orgPhotos.ps1 [pastaDeOrigem] [pastaDeDestino]
+.\orgPhotos.ps1 [pastaDeOrigem] [pastaDeDestino] [modoDebug]
 ```
 
 ## Parametros de entradas
@@ -19,3 +19,7 @@ Modo de uso
 - Opcional
 - Valor padrão é a pasta atual (".\")
 - Deve ser informado no seguinte formado "C:\Nome\Da\Pasta"
+
+### pastaDeDestino
+- Opcional
+- se o valor 1 for informado irá somente listas os arquivos, e não executar a ação
