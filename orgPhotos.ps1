@@ -1,4 +1,7 @@
-param ($debugMode)
+#Input Params
+param ($src,$target,$debugMode)
+$srcFolder = $src
+$targetFolder = $target
 
 #functions
 function DefaultFolderValue {
@@ -79,11 +82,9 @@ function OrgPhotos {
     }
 }
 
-#Input Params
-$srcFolder = $args[0]
-$targetFolder = $args[1]
 
 
+#Exec
 $srcFolder = DefaultFolderValue -inputSrt $srcFolder
 
 if ([string]::IsNullOrEmpty($targetFolder)) {
@@ -92,8 +93,6 @@ if ([string]::IsNullOrEmpty($targetFolder)) {
 else {
     $targetFolder = DefaultFolderValue -inputSrt $targetFolder
 }
-
-
 
 $debug = $false;
 if ($debugMode -eq 1) {
