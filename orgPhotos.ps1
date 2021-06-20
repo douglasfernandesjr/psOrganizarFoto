@@ -1,3 +1,5 @@
+param ($debugMode)
+
 #functions
 function DefaultFolderValue {
     param([string]$inputSrt)
@@ -83,10 +85,18 @@ $targetFolder = $args[1]
 
 
 $srcFolder = DefaultFolderValue -inputSrt $srcFolder
-$targetFolder = DefaultFolderValue -inputSrt $targetFolder
+
+if ([string]::IsNullOrEmpty($targetFolder)) {
+    $targetFolder = $srcFolder
+}
+else {
+    $targetFolder = DefaultFolderValue -inputSrt $targetFolder
+}
+
+
 
 $debug = $false;
-if ($args[2] -eq 1) {
+if ($debugMode -eq 1) {
     $debug = $true 
 }
 
